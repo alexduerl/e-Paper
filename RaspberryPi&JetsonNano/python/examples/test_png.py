@@ -29,7 +29,7 @@ try:
     
     logging.info("4.read bmp file on window")
     Himage2 = Image.new('1', (epd.height, epd.width), 255)  # 255: clear the frame
-    bmp = Image.open(os.path.join(picdir, 'test.png'))
+    bmp = Image.open(os.path.join(picdir, 'energy.png'))
     Himage2.paste(bmp, (50,10))
     epd.display(epd.getbuffer(Himage2))
     time.sleep(2)
