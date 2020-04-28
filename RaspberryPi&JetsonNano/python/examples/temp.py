@@ -13,6 +13,7 @@ import time
 from PIL import Image,ImageDraw,ImageFont
 import traceback
 import requests
+import datetime
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -37,12 +38,18 @@ try:
     logging.info("Humidity:")
     logging.info(hum)    
     
+    # Datum ermitteln
+
+    now = datetime.datetime.now()
+    
     # Show Temperature and Humidity
     logging.info("1.Show Temperature and Humidity..")
     Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
     draw = ImageDraw.Draw(Himage)
-    draw.text((10, 0), 'Temperatur: ' + temp + '°C' , font = font24, fill = 0)
-    draw.line((20, 50, 70, 100), fill = 0)
+    draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font18, fill = 0)
+    draw.line((0, 20, 400, 20), fill = 0)
+    draw.text((5, 22), 'Temperatur: ' +  str(temp) + '°C / ' + str(hum) + '%' , font = font24, fill = 0)    
+    
     epd.display(epd.getbuffer(Himage))
     time.sleep(2)
     
