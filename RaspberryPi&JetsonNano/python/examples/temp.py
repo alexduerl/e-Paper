@@ -48,8 +48,8 @@ try:
     
     
     draw = ImageDraw.Draw(Himage)
-    #bmp = Image.open(os.path.join(picdir, 'temp.png'))
-    #Himage.paste(bmp, (5,22))
+    bmp = Image.open(os.path.join(picdir, 'temp.png'))
+    Himage.paste(bmp, (5,22))
     
     
     draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font18, fill = 0)
