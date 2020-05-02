@@ -53,7 +53,7 @@ try:
     	# Datum ermitteln
     	now = datetime.datetime.now()  
 
-    	epd.Clear()     
+    	epd.Clear()
         draw = ImageDraw.Draw(Himage)
     	draw.text((5, 0), now.strftime('%d.%m.%Y') + ' ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
     	draw.line((0, 20, 400, 20), fill = 0)
