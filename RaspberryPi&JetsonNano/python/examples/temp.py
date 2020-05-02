@@ -58,7 +58,7 @@ try:
     	draw.line((0, 20, 400, 20), fill = 0)
     	draw.text((25, 22), 'Temperatur: ' +  str(temp) + '°C / ' + str(hum) + '%' , font = font24, fill = 0)      
     	epd.display(epd.getbuffer(Himage))
-    	time.sleep(2)
+    	time.sleep(60)
     	#logging.info("Goto Sleep...")
     	#epd.sleep()
     
