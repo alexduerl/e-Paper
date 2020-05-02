@@ -48,8 +48,8 @@ try:
     	data = r.json()
     	temp = data["temperature"]
     	hum = data["humidity"]
-    	logging.info("Temperature:" + temp)
-    	logging.info("Humidity:" + hum) 
+    	logging.info("Temperature:" + str(temp))
+    	logging.info("Humidity:" + str(hum)) 
     	
     	# Datum ermitteln
     	now = datetime.datetime.now()  
