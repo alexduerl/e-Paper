@@ -39,9 +39,6 @@ try:
     #bmp = Image.open(os.path.join(picdir, 'temp.png'))
     #Himage.paste(bmp, (5,22))
 
-    logging.info("init ...")
-    epd.init()
-
     while True:    
     	r = requests.get('http://homematic-raspi/addons/red/hello-json')
     	data = r.json()
@@ -53,11 +50,10 @@ try:
     	# Datum ermitteln
     	now = datetime.datetime.now()  
 
-    	epd.Clear()
-    	draw = ImageDraw.Draw(Himage)
     	draw.text((5, 0), now.strftime('%d.%m.%Y') + ' ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
     	draw.line((0, 20, 400, 20), fill = 0)
     	draw.text((25, 22), 'Temperatur: ' +  str(temp) + '°C / ' + str(hum) + '%' , font = font24, fill = 0) 
+    	epd.init()
     	epd.display(epd.getbuffer(Himage))
     	time.sleep(10)
     	#logging.info("Goto Sleep...")
