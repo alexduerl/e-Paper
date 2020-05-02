@@ -26,18 +26,9 @@ try:
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
     
-    r = requests.get('http://homematic-raspi/addons/red/hello-json')
-    data = r.json()
-    temp = data["temperature"]
-    hum = data["humidity"]
-    logging.info("Temperature:")
-    logging.info(temp)
-    logging.info("Humidity:")
-    logging.info(hum)    
-    
-    # Datum ermitteln
 
-    now = datetime.datetime.now()
+    
+
     
     # Show Temperature and Humidity
     logging.info("1.Show Temperature and Humidity..")
@@ -53,6 +44,16 @@ try:
 
 
     while True:    
+    	r = requests.get('http://homematic-raspi/addons/red/hello-json')
+    	data = r.json()
+    	temp = data["temperature"]
+    	hum = data["humidity"]
+    	logging.info("Temperature:" + temp)
+    	logging.info("Humidity:" + hum) 
+    	
+    	# Datum ermitteln
+    	now = datetime.datetime.now()  
+    
     	draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font18, fill = 0)
     	draw.line((0, 20, 400, 20), fill = 0)
     	draw.text((25, 22), 'Temperatur: ' +  str(temp) + '°C / ' + str(hum) + '%' , font = font24, fill = 0)      
