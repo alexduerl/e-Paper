@@ -21,9 +21,6 @@ try:
     logging.info("epd4in2 Demo")
     
     epd = epd4in2.EPD()
-    logging.info("init and Clear")
- #   epd.init()
- #   epd.Clear()
     
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
@@ -52,7 +49,8 @@ try:
     #Himage.paste(bmp, (5,22))
 
     while True:    
-    	epd.init()
+    	logging.info("init ...")
+        epd.init()
     	draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font18, fill = 0)
     	draw.line((0, 20, 400, 20), fill = 0)
     	draw.text((25, 22), 'Temperatur: ' +  str(temp) + '°C / ' + str(hum) + '%' , font = font24, fill = 0)      
