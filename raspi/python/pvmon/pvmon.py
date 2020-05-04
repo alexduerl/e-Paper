@@ -44,15 +44,15 @@ try:
     	hum = data["humidity"]
     	logging.info("Temperature:" + str(temp))
     	logging.info("Humidity:" + str(hum)) 
-    	
-    	# Datum 
-    	now = datetime.datetime.now()
-    	draw.text((300, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0) 
         
     	# Solaredge-Logo
     	img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
     	Himage.paste(img, (275,273))    	
     	draw = ImageDraw.Draw(Himage)
+    	
+    	# Datum 
+    	now = datetime.datetime.now()
+    	draw.text((300, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0) 
     	
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
