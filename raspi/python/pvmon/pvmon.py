@@ -25,6 +25,7 @@ try:
     	
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
+    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
     
     # Show Temperature and Humidity
@@ -49,7 +50,7 @@ try:
     	
     	# Solaredge-Logo
     	img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
-    	Himage.paste(img, (1,273))    	
+    	Himage.paste(img, (275,273))    	
     	draw = ImageDraw.Draw(Himage)
     	
     	# Temperature
@@ -58,10 +59,16 @@ try:
     	draw = ImageDraw.Draw(Himage)
     	
     	# Battery
-    	img = Image.open(os.path.join(picdir, 'battery.png'))
-    	Himage.paste(img, (270,273))    	
-    	draw = ImageDraw.Draw(Himage)
-    	draw.text((5, 0), now.strftime('%d.%m.%Y') + ' / ' + now.strftime('%H:%M'), font = font18, fill = 0)
+    	#img = Image.open(os.path.join(picdir, 'battery.png'))
+    	#Himage.paste(img, (270,273))    	
+    	#draw = ImageDraw.Draw(Himage)
+    	
+    	# Datum
+    	draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font18, fill = 0)
+    	
+    	# Last update
+    	draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font24, fill = 0)
+    	
     	draw.line((0, 25, 400, 25), fill = 0)
     	draw.line((0, 270, 400, 270), fill = 0)
     	draw.text((25, 22), 'Temperatur: ' +  str(temp) + '°C / ' + str(hum) + '%' , font = font24, fill = 0) 
