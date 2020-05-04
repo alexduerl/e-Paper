@@ -47,7 +47,7 @@ try:
     	# Datum ermitteln
     	now = datetime.datetime.now()  
     	
-    	img = Image.open(os.path.join(picdir, 'solaredge.png'))
+    	img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
     	Himage.paste(img, (1,273))    	
     	draw = ImageDraw.Draw(Himage)
     	img = Image.open(os.path.join(picdir, 'battery.png'))
