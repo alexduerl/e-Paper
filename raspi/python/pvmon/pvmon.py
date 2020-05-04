@@ -47,9 +47,17 @@ try:
     	# Datum ermitteln
     	now = datetime.datetime.now()  
     	
+    	# Solaredge-Logo
     	img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
     	Himage.paste(img, (1,273))    	
     	draw = ImageDraw.Draw(Himage)
+    	
+    	# Temperature
+    	img = Image.open(os.path.join(picdir, 'temp.bmp'))
+    	Himage.paste(img, (1,273))    	
+    	draw = ImageDraw.Draw(Himage)
+    	
+    	# Battery
     	img = Image.open(os.path.join(picdir, 'battery.png'))
     	Himage.paste(img, (270,273))    	
     	draw = ImageDraw.Draw(Himage)
