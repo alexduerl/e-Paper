@@ -55,15 +55,15 @@ try:
     	
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
-    	Himage.paste(img, (1,22))    	
+    	Himage.paste(img, (1,25))    	
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((25, 22), str(temp) + '°C', font = font24, fill = 0) 
+    	draw.text((25, 25), str(temp) + '°C', font = font24, fill = 0) 
     	
     	# Humidity
     	img = Image.open(os.path.join(picdir, 'humidity.png'))
-    	Himage.paste(img, (1,200))    	
+    	Himage.paste(img, (100,25))    	
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((25, 225), str(hum) + '%' , font = font24, fill = 0) 
+    	draw.text((125, 25), str(hum) + '%' , font = font24, fill = 0) 
     	
     	
     	# Battery
