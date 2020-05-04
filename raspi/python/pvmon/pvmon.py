@@ -45,8 +45,9 @@ try:
     	logging.info("Temperature:" + str(temp))
     	logging.info("Humidity:" + str(hum)) 
     	
-    	# Datum ermitteln
-    	now = datetime.datetime.now()  
+    	# Datum 
+    	now = datetime.datetime.now() 
+        draw.text((300, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0) 
     	
     	# Solaredge-Logo
     	img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
@@ -55,24 +56,21 @@ try:
     	
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
-    	Himage.paste(img, (1,25))    	
+    	Himage.paste(img, (0,0))    	
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((25, 25), str(temp) + '°C', font = font24, fill = 0) 
+    	draw.text((25, 0), str(temp) + '°C', font = font24, fill = 0) 
     	
     	# Humidity
     	img = Image.open(os.path.join(picdir, 'humidity.png'))
-    	Himage.paste(img, (100,25))    	
+    	Himage.paste(img, (100,0))    	
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((125, 25), str(hum) + '%' , font = font24, fill = 0) 
+    	draw.text((125, 0), str(hum) + '%' , font = font24, fill = 0) 
     	
     	
     	# Battery
     	#img = Image.open(os.path.join(picdir, 'battery.png'))
     	#Himage.paste(img, (270,273))    	
     	#draw = ImageDraw.Draw(Himage)
-    	
-    	# Datum
-    	draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font18, fill = 0)
     	
     	# Last update
     	draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
