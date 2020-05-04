@@ -57,6 +57,14 @@ try:
     	img = Image.open(os.path.join(picdir, 'temp.png'))
     	Himage.paste(img, (1,22))    	
     	draw = ImageDraw.Draw(Himage)
+    	draw.text((25, 22), str(temp) + '°C', font = font24, fill = 0) 
+    	
+    	# Humidity
+    	img = Image.open(os.path.join(picdir, 'humidity.png'))
+    	Himage.paste(img, (1,200))    	
+    	draw = ImageDraw.Draw(Himage)
+    	draw.text((25, 225), str(hum) + '%' , font = font24, fill = 0) 
+    	
     	
     	# Battery
     	#img = Image.open(os.path.join(picdir, 'battery.png'))
@@ -71,7 +79,7 @@ try:
     	
     	draw.line((0, 25, 400, 25), fill = 0)
     	draw.line((0, 270, 400, 270), fill = 0)
-    	draw.text((25, 22), str(temp) + '°C / ' + str(hum) + '%' , font = font24, fill = 0) 
+
     	epd.display(epd.getbuffer(Himage))
     	time.sleep(60)
     	#logging.info("Goto Sleep...")
