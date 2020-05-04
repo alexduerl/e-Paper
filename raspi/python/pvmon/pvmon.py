@@ -53,8 +53,8 @@ try:
     	draw = ImageDraw.Draw(Himage)
     	
     	# Temperature
-    	img = Image.open(os.path.join(picdir, 'temp.bmp'))
-    	Himage.paste(img, (1,273))    	
+    	img = Image.open(os.path.join(picdir, 'temp.png'))
+    	Himage.paste(img, (1,50))    	
     	draw = ImageDraw.Draw(Himage)
     	
     	# Battery
