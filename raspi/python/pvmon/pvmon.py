@@ -66,6 +66,11 @@ try:
     	draw = ImageDraw.Draw(Himage)
     	draw.text((125, 0), str(hum) + '%' , font = font24, fill = 0) 
     	
+    	# Produktion
+    	draw.text((5,30), 'Produktion: 59.02 kWh', font=font24, fill = 0)
+    	draw.rectangle((5, 30, 295, 40), outline = 0)
+    	
+    	
     	
     	# Battery
     	#img = Image.open(os.path.join(picdir, 'battery.png'))
