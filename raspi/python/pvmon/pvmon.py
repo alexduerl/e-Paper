@@ -72,7 +72,7 @@ try:
     	draw.text((5, 82), 'Eigenverbrauch:', font = font24, fill = 0)
     	
     	# Verbrauch
-    	draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)    	
+    	draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font18, fill = 0)    	
     	draw.rectangle((5, 130, 395, 150), outline = 0)
     	
     	
