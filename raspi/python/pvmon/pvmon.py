@@ -68,7 +68,8 @@ try:
     	
     	# Produktion
     	draw.text((5,30), 'Produktion: 59.02 kWh', font=font24, fill = 0)
-    	draw.rectangle((5, 30, 295, 40), outline = 0)
+    	draw.rectangle((5, 60, 395, 80), outline = 0)
+    	draw.rectangle((5, 60, 150, 80), fill = 1)
     	
     	
     	
