@@ -77,7 +77,15 @@ try:
     	
     	# Aktuelle Leistung
     	img = Image.open(os.path.join(picdir, 'panel.png'))
-    	Himage.paste(img, (5,220))    	
+    	Himage.paste(img, (5,220)) 
+    	
+    	# Planted Trees
+    	img = Image.open(os.path.join(picdir, 'leaf.png'))
+    	Himage.paste(img, (180,220))   
+    	
+    	# CO2 Footprint
+    	img = Image.open(os.path.join(picdir, 'footprint.png'))
+    	Himage.paste(img, (360,220))      	
     	
     	
     	
