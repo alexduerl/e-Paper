@@ -52,7 +52,7 @@ try:
     	
     	# Datum 
     	now = datetime.datetime.now()
-    	draw.text((300, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0) 
+    	draw.text((250, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0) 
     	
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
