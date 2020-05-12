@@ -69,7 +69,7 @@ try:
         draw.text((350, 0), str(hum) + '%' , font = font24, fill = 0)
 
         # Produktion
-        img = Image.open(os.path.join(picdir, 'panel.png'))
+        img = Image.open(os.path.join(picdir, 'production.png'))
         Himage.paste(img, (130,30))
         draw.text((180,30), '60.00 kWh', font = font24, fill = 0)
         draw.text((5,55), '20%', font = font18, fill = 0)
