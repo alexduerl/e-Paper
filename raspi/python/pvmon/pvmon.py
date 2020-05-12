@@ -56,15 +56,15 @@ try:
 
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
-    	Himage.paste(img, (0,0))
+    	Himage.paste(img, (250,0))
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((280, 0), str(temp) + '°C', font = font24, fill = 0)
+    	draw.text((275, 0), str(temp) + '°C', font = font24, fill = 0)
 
     	# Humidity
     	img = Image.open(os.path.join(picdir, 'humidity.png'))
-    	Himage.paste(img, (100,0))
+    	Himage.paste(img, (325,0))
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((380, 0), str(hum) + '%' , font = font24, fill = 0)
+    	draw.text((350, 0), str(hum) + '%' , font = font24, fill = 0)
 
     	# Produktion
     	draw.text((5,30), 'Produktion: 59.02 kWh', font=font24, fill = 0)
