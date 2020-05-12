@@ -19,22 +19,22 @@ logging.basicConfig(level=logging.DEBUG)
 
 try:
     logging.info("epd4in2 Demo")
-    
+
     epd = epd4in2.EPD()
     epd.init()
-    	
+
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
     font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
     font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
-    
+
     # Show Temperature and Humidity
     logging.info("1.Show Temperature and Humidity..")
 
     #bmp = Image.open(os.path.join(picdir, 'temp.png'))
     #Himage.paste(bmp, (5,22))
 
-    while True:    
+    while True:
     	Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
 
 
@@ -43,60 +43,60 @@ try:
     	temp = data["temperature"]
     	hum = data["humidity"]
     	logging.info("Temperature:" + str(temp))
-    	logging.info("Humidity:" + str(hum)) 
-        
+    	logging.info("Humidity:" + str(hum))
+
     	# Solaredge-Logo
     	img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
-    	Himage.paste(img, (275,273))    	
+    	Himage.paste(img, (275,273))
     	draw = ImageDraw.Draw(Himage)
-    	
-    	# Datum 
+
+    	# Datum
     	now = datetime.datetime.now()
-    	draw.text((250, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0) 
-    	
+    	draw.text((250, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0)
+
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
-    	Himage.paste(img, (0,0))    	
+    	Himage.paste(img, (0,0))
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((25, 0), str(temp) + '°C', font = font24, fill = 0) 
-    	
+    	draw.text((25, 0), str(temp) + '°C', font = font24, fill = 0)
+
     	# Humidity
     	img = Image.open(os.path.join(picdir, 'humidity.png'))
-    	Himage.paste(img, (100,0))    	
+    	Himage.paste(img, (100,0))
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((125, 0), str(hum) + '%' , font = font24, fill = 0) 
-    	
+    	draw.text((125, 0), str(hum) + '%' , font = font24, fill = 0)
+
     	# Produktion
     	draw.text((5,30), 'Produktion: 59.02 kWh', font=font24, fill = 0)
-    	draw.rectangle((5, 60, 395, 80), outline = 0)
+    	draw.rectangle((5, 60, 395, 68), outline = 0)
     	draw.text((5, 82), 'Eigenverbrauch:', font = font18, fill = 0)
-    	
+
     	# Verbrauch
-    	draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)    	
+    	draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)
     	draw.rectangle((5, 130, 395, 150), outline = 0)
-    	
+
     	# Aktuelle Leistung
     	img = Image.open(os.path.join(picdir, 'panel.png'))
-    	Himage.paste(img, (5,220)) 
-    	
+    	Himage.paste(img, (5,220))
+
     	# Planted Trees
     	img = Image.open(os.path.join(picdir, 'leaf.png'))
-    	Himage.paste(img, (180,220))   
-    	
+    	Himage.paste(img, (180,220))
+
     	# CO2 Footprint
     	img = Image.open(os.path.join(picdir, 'footprint.png'))
-    	Himage.paste(img, (360,220))      	
-    	
-    	
-    	
+    	Himage.paste(img, (360,220))
+
+
+
     	# Battery
     	#img = Image.open(os.path.join(picdir, 'battery.png'))
-    	#Himage.paste(img, (270,273))    	
+    	#Himage.paste(img, (270,273))
     	#draw = ImageDraw.Draw(Himage)
-    	
+
     	# Last update
     	draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
-    	
+
     	draw.line((0, 25, 400, 25), fill = 0)
     	draw.line((0, 270, 400, 270), fill = 0)
 
@@ -104,11 +104,11 @@ try:
     	time.sleep(60)
     	#logging.info("Goto Sleep...")
     	#epd.sleep()
-    
+
 except IOError as e:
     logging.info(e)
-    
-except KeyboardInterrupt:    
+
+except KeyboardInterrupt:
     logging.info("ctrl + c:")
     epd4in2.epdconfig.module_exit()
     exit()
