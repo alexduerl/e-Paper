@@ -85,6 +85,8 @@ try:
         draw.text((355,125), '60%', font = font18, fill = 0)
         draw.rectangle((48, 130, 351, 138), outline = 0)
         draw.rectangle((50, 133, 170, 135), fill = 0)
+        draw.text((48, 140), 'Eigenproduktion', font = font12, fill = 0)
+        draw.text((300, 140), 'Zukauf', font = font12, fill = 0)
 
         # Aktuelle Leistung
         img = Image.open(os.path.join(picdir, 'panel.png'))
