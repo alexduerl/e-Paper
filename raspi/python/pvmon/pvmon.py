@@ -69,6 +69,8 @@ try:
         draw.text((350, 0), str(hum) + '%' , font = font24, fill = 0)
 
         # Produktion
+        img = Image.open(os.path.join(picdir, 'panel.png'))
+        Himage.paste(img, (130,30))
         draw.text((180,30), '60.00 kWh', font = font24, fill = 0)
         draw.text((5,55), '20%', font = font18, fill = 0)
         draw.text((355,55), '80%', font = font18, fill = 0)
@@ -89,8 +91,7 @@ try:
         draw.text((300, 140), 'Zukauf', font = font12, fill = 0)
 
         # Aktuelle Leistung
-        img = Image.open(os.path.join(picdir, 'panel.png'))
-        Himage.paste(img, (5,220))
+
 
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
