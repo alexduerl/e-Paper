@@ -69,13 +69,15 @@ try:
         draw.text((350, 0), str(hum) + '%' , font = font24, fill = 0)
 
         # Produktion
-        draw.text((5,30), 'Produktion: 59.02 kWh', font = font24, fill = 0)
+        draw.text((5,180), '60.00 kWh', font = font24, fill = 0)
         draw.text((5,55), '20%', font = font18, fill = 0)
         draw.text((355,55), '80%', font = font18, fill = 0)
         draw.rectangle((48, 60, 351, 68), outline = 0)
         draw.rectangle((50, 63, 110, 65), fill = 0)
         draw.text((48, 70), 'Eigenverbrauch', font = font12, fill = 0)
-        draw.text((280, 70), 'Einspeisung', font = font12, fill = 0)
+        draw.text((48, 70), 'Eigenverbrauch', font = font12, fill = 0)
+        draw.text((48, 46), '12 kWh', font = font12, fill = 0)
+        draw.text((280, 46), '48 kWh', font = font12, fill = 0)
 
         # Verbrauch
         draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)
