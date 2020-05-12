@@ -52,19 +52,19 @@ try:
 
     	# Datum
     	now = datetime.datetime.now()
-    	draw.text((250, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0)
+    	draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0)
 
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
     	Himage.paste(img, (0,0))
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((25, 0), str(temp) + '°C', font = font24, fill = 0)
+    	draw.text((280, 0), str(temp) + '°C', font = font24, fill = 0)
 
     	# Humidity
     	img = Image.open(os.path.join(picdir, 'humidity.png'))
     	Himage.paste(img, (100,0))
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((125, 0), str(hum) + '%' , font = font24, fill = 0)
+    	draw.text((380, 0), str(hum) + '%' , font = font24, fill = 0)
 
     	# Produktion
     	draw.text((5,30), 'Produktion: 59.02 kWh', font=font24, fill = 0)
