@@ -73,7 +73,8 @@ try:
         draw.text((355,55), '80%', font = font18, fill = 0)
         draw.rectangle((48, 60, 351, 68), outline = 0)
         draw.rectangle((50, 63, 110, 65), fill = 0)
-        draw.text((5, 82), 'Eigenverbrauch:', font = font18, fill = 0)
+        draw.text((48, 70), 'Eigenverbrauch', font = font18, fill = 0)
+        draw.text((200, 70), 'Einspeisung', font = font18, fill = 0)
 
         # Verbrauch
         draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)
