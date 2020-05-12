@@ -56,9 +56,9 @@ try:
 
     	# Temperature
     	img = Image.open(os.path.join(picdir, 'temp.png'))
-    	Himage.paste(img, (250,0))
+    	Himage.paste(img, (225,0))
     	draw = ImageDraw.Draw(Himage)
-    	draw.text((275, 0), str(temp) + '°C', font = font24, fill = 0)
+    	draw.text((250, 0), str(temp) + '°C', font = font24, fill = 0)
 
     	# Humidity
     	img = Image.open(os.path.join(picdir, 'humidity.png'))
