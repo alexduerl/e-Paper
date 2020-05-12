@@ -39,10 +39,10 @@ try:
 
         r = requests.get('http://homematic-raspi/addons/red/hello-json')
         data = r.json()
-        #temp = data["temperature"]
-        #hum = data["humidity"]
-        temp = '21.9'
-        hum = '100'
+        temp = data["temperature"]
+        hum = data["humidity"]
+        #temp = '21.9'
+        #hum = '100'
         logging.info("Temperature:" + str(temp))
         logging.info("Humidity:" + str(hum))
 
