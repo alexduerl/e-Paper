@@ -72,13 +72,15 @@ try:
         draw.text((5,55), '20%', font = font18, fill = 0)
         draw.text((355,55), '80%', font = font18, fill = 0)
         draw.rectangle((48, 60, 351, 68), outline = 0)
-        draw.rectangle((50, 63, 80, 65), fill = 0)
+        draw.rectangle((50, 63, 110, 65), fill = 0)
         draw.text((5, 82), 'Eigenverbrauch:', font = font18, fill = 0)
 
         # Verbrauch
         draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)
-        draw.rectangle((98, 130, 301, 138), outline = 0)
-        draw.rectangle((100, 133, 299, 135), fill = 0)
+        draw.text((5,125), '40%', font = font18, fill = 0)
+        draw.text((355,125), '60%', font = font18, fill = 0)
+        draw.rectangle((48, 130, 351, 138), outline = 0)
+        draw.rectangle((50, 133, 170, 135), fill = 0)
 
         # Aktuelle Leistung
         img = Image.open(os.path.join(picdir, 'panel.png'))
