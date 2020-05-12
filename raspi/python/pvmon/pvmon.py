@@ -68,14 +68,14 @@ try:
 
     	# Produktion
     	draw.text((5,30), 'Produktion: 59.02 kWh', font=font24, fill = 0)
-    	draw.rectangle((5, 60, 395, 68), outline = 0)
-    	draw.rectangle((8, 63, 210, 65), fill = 0)
+    	draw.rectangle((98, 60, 301, 68), outline = 0)
+    	draw.rectangle((100, 63, 299, 65), fill = 0)
     	draw.text((5, 82), 'Eigenverbrauch:', font = font18, fill = 0)
 
     	# Verbrauch
     	draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)
-    	draw.rectangle((5, 130, 395, 138), outline = 0)
-    	draw.rectangle((8, 133, 150, 135), fill = 0)
+    	draw.rectangle((98, 130, 301, 138), outline = 0)
+    	draw.rectangle((100, 133, 299, 135), fill = 0)
 
     	# Aktuelle Leistung
     	img = Image.open(os.path.join(picdir, 'panel.png'))
