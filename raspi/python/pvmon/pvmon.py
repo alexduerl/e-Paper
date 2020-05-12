@@ -74,7 +74,7 @@ try:
 
     	# Verbrauch
     	draw.text((5,100), 'Verbrauch: 17.02 kWh', font=font24, fill = 0)
-    	draw.rectangle((5, 130, 395, 150), outline = 0)
+    	draw.rectangle((5, 130, 210, 150), outline = 0)
 
     	# Aktuelle Leistung
     	img = Image.open(os.path.join(picdir, 'panel.png'))
