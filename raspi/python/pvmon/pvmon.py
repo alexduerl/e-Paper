@@ -42,7 +42,7 @@ try:
         #temp = data["temperature"]
         #hum = data["humidity"]
         temp = '21.9'
-        hum = '9'
+        hum = '100'
         logging.info("Temperature:" + str(temp))
         logging.info("Humidity:" + str(hum))
 
