@@ -67,8 +67,8 @@ try:
 
     	# Produktion
     	draw.text((5,30), 'Produktion: 59.02 kWh', font=font24, fill = 0)
-        draw.text((5,55), '20%', font = font18, fill = 0)
-        draw.text((305, 55), '80%', font =  font18, fill = 0)
+    	draw.text((5,55), '20%', font=font24, fill = 0)
+    	draw.text((305,55), '80%', font=font24, fill = 0)
         draw.rectangle((98, 60, 301, 68), outline = 0)
     	draw.rectangle((100, 63, 120, 65), fill = 0)
     	draw.text((5, 82), 'Eigenverbrauch:', font = font18, fill = 0)
