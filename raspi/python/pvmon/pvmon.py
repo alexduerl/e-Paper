@@ -71,7 +71,7 @@ try:
         # Produktion
         img = Image.open(os.path.join(picdir, 'production.png'))
         Himage.paste(img, (130,80))
-        draw.text((180,100), '60.00 kWh', font = font24, fill = 0)
+        draw.text((170,100), '60.00 kWh', font = font24, fill = 0)
         draw.text((5,125), '20%', font = font18, fill = 0)
         draw.text((355,125), '80%', font = font18, fill = 0)
         draw.rectangle((48, 130, 351, 138), outline = 0)
@@ -82,8 +82,8 @@ try:
         draw.text((300, 116), '48 kWh', font = font12, fill = 0)
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
-        Himage.paste(img, (130,145))
-        draw.text((180,170), '17.02 kWh', font=font24, fill = 0)
+        Himage.paste(img, (130,155))
+        draw.text((170,170), '17.02 kWh', font=font24, fill = 0)
         draw.text((5,195), '40%', font = font18, fill = 0)
         draw.text((355,195), '60%', font = font18, fill = 0)
         draw.rectangle((48, 200, 351, 208), outline = 0)
