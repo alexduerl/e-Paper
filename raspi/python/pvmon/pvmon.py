@@ -113,6 +113,7 @@ try:
         draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
 
         draw.line((0, 25, 400, 25), fill = 0)
+        draw.line((0, 75, 400, 75), fill = 0)
         draw.line((0, 270, 400, 270), fill = 0)
 
         epd.display(epd.getbuffer(Himage))
