@@ -92,7 +92,8 @@ try:
         draw.text((300, 210), 'Zukauf', font = font12, fill = 0)
 
         # Aktuelle Leistung
-
+        img = Image.open(os.path.join(picdir, 'power.png'))
+        Himage.paste(img, (5,25))
 
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
