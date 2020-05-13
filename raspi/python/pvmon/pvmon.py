@@ -106,9 +106,8 @@ try:
 
 
         # Battery
-        #img = Image.open(os.path.join(picdir, 'battery.png'))
-        #Himage.paste(img, (270,273))
-        #draw = ImageDraw.Draw(Himage)
+        img = Image.open(os.path.join(picdir, 'battery.png'))
+        Himage.paste(img, (205,25))
 
         # Last update
         draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
