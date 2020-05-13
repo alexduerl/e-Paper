@@ -99,8 +99,8 @@ try:
         Himage.paste(img, (180,220))
 
         # CO2 Footprint
-        img = Image.open(os.path.join(picdir, 'footprint.png'))
-        Himage.paste(img, (360,220))
+        #img = Image.open(os.path.join(picdir, 'footprint.png'))
+        #Himage.paste(img, (360,220))
 
 
 
