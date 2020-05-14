@@ -90,8 +90,8 @@ try:
         draw.rectangle((50, 203, 290, 205), fill = 0)
         draw.text((48, 210), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((300, 210), 'Zukauf', font = font12, fill = 0)
-        draw.text((48, 96), '16 kWh', font = font12, fill = 0)
-        draw.text((300, 96), '4 kWh', font = font12, fill = 0)
+        draw.text((48, 196), '16 kWh', font = font12, fill = 0)
+        draw.text((300, 196), '4 kWh', font = font12, fill = 0)
 
         # Aktuelle Leistung
         img = Image.open(os.path.join(picdir, 'power.png'))
