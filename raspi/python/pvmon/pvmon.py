@@ -96,6 +96,7 @@ try:
         # Aktuelle Leistung
         img = Image.open(os.path.join(picdir, 'power.png'))
         Himage.paste(img, (5,25))
+        draw.text((55,25), '0,3 kW', font = font24, fill = 0)
 
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
@@ -109,10 +110,12 @@ try:
         # Load
         img = Image.open(os.path.join(picdir, 'load.png'))
         Himage.paste(img, (205,25))
+        draw.text((255,25), '0,5 kW', font = font24, fill = 0)
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
         Himage.paste(img, (5,220))
+        draw.text((55,220), '55 %', font = font24, fill = 0)
 
         # Last update
         draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
