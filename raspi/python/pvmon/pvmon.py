@@ -118,6 +118,7 @@ try:
         draw.line((0, 25, 400, 25), fill = 0)
         draw.line((0, 75, 400, 75), fill = 0)
         draw.line((200, 25, 200, 75), fill = 0)
+        draw.line((0, 220, 400, 220), fill = 0)
         draw.line((0, 270, 400, 270), fill = 0)
 
         epd.display(epd.getbuffer(Himage))
