@@ -110,7 +110,7 @@ try:
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
-        Himage.paste(img, (350,220))
+        Himage.paste(img, (5,220))
 
         # Last update
         draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
