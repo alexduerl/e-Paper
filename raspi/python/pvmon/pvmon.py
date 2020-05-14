@@ -113,9 +113,9 @@ try:
         draw.text((260,40), '0,5 kW', font = font24, fill = 0)
 
         # Battery
-        img = Image.open(os.path.join(picdir, 'battery_charging.png'))
+        img = Image.open(os.path.join(picdir, 'battery_uncharging.png'))
         Himage.paste(img, (5,220))
-        draw.text((60,230), '55 %', font = font24, fill = 0)
+        draw.text((60,235), '55 %', font = font24, fill = 0)
 
         # Last update
         draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
