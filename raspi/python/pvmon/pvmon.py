@@ -83,13 +83,15 @@ try:
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
         Himage.paste(img, (120,150))
-        draw.text((170,170), '17.02 kWh', font=font24, fill = 0)
-        draw.text((5,195), '40%', font = font18, fill = 0)
-        draw.text((355,195), '60%', font = font18, fill = 0)
+        draw.text((170,170), '20.00 kWh', font=font24, fill = 0)
+        draw.text((5,195), '80%', font = font18, fill = 0)
+        draw.text((355,195), '20%', font = font18, fill = 0)
         draw.rectangle((48, 200, 351, 208), outline = 0)
-        draw.rectangle((50, 203, 170, 205), fill = 0)
+        draw.rectangle((50, 203, 290, 205), fill = 0)
         draw.text((48, 210), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((300, 210), 'Zukauf', font = font12, fill = 0)
+        draw.text((48, 96), '16 kWh', font = font12, fill = 0)
+        draw.text((300, 96), '4 kWh', font = font12, fill = 0)
 
         # Aktuelle Leistung
         img = Image.open(os.path.join(picdir, 'power.png'))
