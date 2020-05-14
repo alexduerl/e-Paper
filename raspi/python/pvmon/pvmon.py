@@ -113,7 +113,7 @@ try:
         draw.text((260,40), '0,5 kW', font = font24, fill = 0)
 
         # Battery
-        img = Image.open(os.path.join(picdir, 'battery.png'))
+        img = Image.open(os.path.join(picdir, 'battery_charging.png'))
         Himage.paste(img, (5,220))
         draw.text((60,230), '55 %', font = font24, fill = 0)
 
