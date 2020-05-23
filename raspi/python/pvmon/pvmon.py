@@ -71,6 +71,7 @@ try:
         # Produktion
         img = Image.open(os.path.join(picdir, 'production.png'))
         Himage.paste(img, (120,80))
+        draw.text((170,80), '0,3 kw', font = font24, fill = 0)
         draw.text((170,100), '60.00 kWh', font = font24, fill = 0)
         draw.text((5,125), '20%', font = font18, fill = 0)
         draw.text((355,125), '80%', font = font18, fill = 0)
@@ -95,7 +96,7 @@ try:
 
         # Aktuelle Leistung
         img = Image.open(os.path.join(picdir, 'power.png'))
-        Himage.paste(img, (5,25))
+        Himage.paste(img, (5,220))
         draw.text((60,40), '0,3 kW', font = font24, fill = 0)
 
         # Planted Trees
@@ -109,7 +110,7 @@ try:
 
         # Load
         img = Image.open(os.path.join(picdir, 'load.png'))
-        Himage.paste(img, (205,25))
+        Himage.paste(img, (205,220))
         draw.text((260,40), '0,5 kW', font = font24, fill = 0)
 
         # Battery
