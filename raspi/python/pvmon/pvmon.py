@@ -86,7 +86,11 @@ try:
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
         Himage.paste(img, (120,150))
-        draw.text((170,170), '20.00 kWh', font=font24, fill = 0)
+        draw.text((170,150), '00,50', font=font24, fill = 0)
+        draw.text((230,150), 'kW', font=font24, fill = 0)
+        draw.text((170,174), '20,00', font=font24, fill = 0)
+        draw.text((230,174), 'kWh', font=font24, fill = 0)
+
         draw.text((5,195), '80%', font = font18, fill = 0)
         draw.text((355,195), '20%', font = font18, fill = 0)
         draw.rectangle((48, 200, 351, 208), outline = 0)
@@ -96,11 +100,6 @@ try:
         draw.text((48, 186), '16 kWh', font = font12, fill = 0)
         draw.text((300, 186), '4 kWh', font = font12, fill = 0)
 
-        # Aktuelle Leistung
-        img = Image.open(os.path.join(picdir, 'power.png'))
-        Himage.paste(img, (5,220))
-        draw.text((60,40), '0,3 kW', font = font24, fill = 0)
-
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
         Himage.paste(img, (180,220))
@@ -108,12 +107,6 @@ try:
         # CO2 Footprint
         #img = Image.open(os.path.join(picdir, 'footprint.png'))
         #Himage.paste(img, (360,220))
-
-
-        # Load
-        img = Image.open(os.path.join(picdir, 'load.png'))
-        Himage.paste(img, (205,220))
-        draw.text((260,40), '0,5 kW', font = font24, fill = 0)
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery_uncharging.png'))
