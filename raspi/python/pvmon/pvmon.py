@@ -114,7 +114,7 @@ try:
         draw.text((60,235), '55 %', font = font24, fill = 0)
 
         # Last update
-        draw.text((5,273), 'Letztes Update: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
+        draw.text((5,273), 'Stand: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
 
         draw.line((0, 25, 400, 25), fill = 0)
         #draw.line((0, 220, 400, 220), fill = 0)
