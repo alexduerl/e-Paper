@@ -90,7 +90,6 @@ try:
         draw.text((230,100), 'kW', font=font24, fill = 0)
         draw.text((170,124), '20,00', font=font24, fill = 0)
         draw.text((230,124), 'kWh', font=font24, fill = 0)
-
         draw.text((5,145), '80%', font = font18, fill = 0)
         draw.text((355,145), '20%', font = font18, fill = 0)
         draw.rectangle((48, 150, 351, 158), outline = 0)
@@ -104,6 +103,8 @@ try:
         img = Image.open(os.path.join(picdir, 'battery.png'))
         Himage.paste(img, (120,170))
         draw.text((170,194), '55 %', font = font24, fill = 0)
+        draw.rectangle((48, 220, 351, 228), outline = 0)
+        draw.rectangle((50, 223, 290, 225), fill = 0)
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
         Himage.paste(img, (180,220))
