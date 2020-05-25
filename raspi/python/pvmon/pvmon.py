@@ -101,10 +101,10 @@ try:
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
-        Himage.paste(img, (120,170))
+        Himage.paste(img, (0,170))
         draw.text((170,194), '55 %', font = font24, fill = 0)
-        draw.rectangle((48, 220, 351, 228), outline = 0)
-        draw.rectangle((50, 223, 290, 225), fill = 0)
+        draw.rectangle((48, 195, 351, 198), outline = 0)
+        draw.rectangle((50, 193, 290, 195), fill = 0)
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
         Himage.paste(img, (180,220))
