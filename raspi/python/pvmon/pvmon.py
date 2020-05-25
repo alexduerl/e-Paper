@@ -76,10 +76,11 @@ try:
         # Umwelt
         img = Image.open(os.path.join(picdir, 'trees.png'))
         Himage.paste(img, (5,230))
+        draw.text((45,232), '445,13', font = font24, fill = 0)
 
         img = Image.open(os.path.join(picdir, 'co2.png'))
         Himage.paste(img, (205,230))
-
+        draw.text((245,232), '14.919,75 kg', font = font24, fill = 0)
 
         # Produktion
         img = Image.open(os.path.join(picdir, 'production.png'))
