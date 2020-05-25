@@ -75,10 +75,10 @@ try:
 
         # Umwelt
         img = Image.open(os.path.join(picdir, 'trees.png'))
-        Himage.paste(img, (5,225))
+        Himage.paste(img, (5,230))
 
         img = Image.open(os.path.join(picdir, 'co2.png'))
-        Himage.paste(img, (205,225))
+        Himage.paste(img, (205,230))
 
 
         # Produktion
