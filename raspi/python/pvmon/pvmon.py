@@ -101,7 +101,7 @@ try:
         draw.text((300, 136), '4 kWh', font = font12, fill = 0)
 
         # Battery
-        img = Image.open(os.path.join(picdir, 'battery_uncharging.png'))
+        img = Image.open(os.path.join(picdir, 'battery.png'))
         Himage.paste(img, (120,170))
         draw.text((170,194), '55 %', font = font24, fill = 0)
         # Planted Trees
