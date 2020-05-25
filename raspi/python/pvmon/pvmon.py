@@ -35,9 +35,6 @@ try:
     #Himage.paste(bmp, (5,22))
 
     while True:
-        Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-
-
         r = requests.get('http://homematic-raspi/addons/red/hello-json')
         data = r.json()
         temp = data["temperature"]
@@ -47,7 +44,15 @@ try:
         logging.info("Temperature:" + str(temp))
         logging.info("Humidity:" + str(hum))
 
-        # Datum
+        Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+        draw = ImageDraw.Draw(Himage)
+
+        # Lines
+        draw.line((0, 25, 400, 25), fill = 0)
+        draw.line((0, 225, 400, 270), fill = 0)
+        draw.line((0, 270, 400, 270), fill = 0)
+
+        # Date
         now = datetime.datetime.now()
         draw.text((5, 0), now.strftime('%d.%m.%Y'), font = font24, fill = 0)
 
@@ -56,10 +61,6 @@ try:
         Himage.paste(img, (225,0))
         draw = ImageDraw.Draw(Himage)
         draw.text((250, 0), str(temp) + '°C', font = font24, fill = 0)
-
-        draw.line((0, 25, 400, 25), fill = 0)
-        draw.line((0, 225, 400, 270), fill = 0)
-        draw.line((0, 270, 400, 270), fill = 0)
 
         # Humidity
         img = Image.open(os.path.join(picdir, 'humidity.png'))
