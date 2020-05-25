@@ -68,6 +68,10 @@ try:
         draw = ImageDraw.Draw(Himage)
         draw.text((350, 0), str(hum) + '%' , font = font24, fill = 0)
 
+        img = Image.open(os.path.join(picdir, 'self_consumption.png'))
+        Himage.paste(img, (0,30))
+
+
         # Produktion
         img = Image.open(os.path.join(picdir, 'production.png'))
         Himage.paste(img, (120,30))
