@@ -70,6 +70,8 @@ try:
 
         img = Image.open(os.path.join(picdir, 'self_consumption.png'))
         Himage.paste(img, (5,35))
+        img = Image.open(os.path.join(picdir, 'feed.png'))
+        Himage.paste(img, (363,35))
 
 
         # Produktion
