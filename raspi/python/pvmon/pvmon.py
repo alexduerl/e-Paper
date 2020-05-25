@@ -100,6 +100,10 @@ try:
         draw.text((48, 136), '16 kWh', font = font12, fill = 0)
         draw.text((300, 136), '4 kWh', font = font12, fill = 0)
 
+        # Battery
+        img = Image.open(os.path.join(picdir, 'battery_uncharging.png'))
+        Himage.paste(img, (120,170))
+        draw.text((170,194), '55 %', font = font24, fill = 0)
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
         Himage.paste(img, (180,220))
@@ -108,10 +112,6 @@ try:
         #img = Image.open(os.path.join(picdir, 'footprint.png'))
         #Himage.paste(img, (360,220))
 
-        # Battery
-        img = Image.open(os.path.join(picdir, 'battery_uncharging.png'))
-        Himage.paste(img, (5,220))
-        draw.text((60,235), '55 %', font = font24, fill = 0)
 
         # Last update
         draw.text((5,273), 'Stand: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
