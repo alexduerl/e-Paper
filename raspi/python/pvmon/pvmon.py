@@ -104,7 +104,7 @@ try:
         Himage.paste(img, (0,170))
         draw.text((170,194), '55 %', font = font24, fill = 0)
         draw.rectangle((48, 195, 351, 203), outline = 0)
-        draw.rectangle((50, 198, 290, 195), fill = 0)
+        draw.rectangle((50, 198, 290, 200), fill = 0)
         # Planted Trees
         img = Image.open(os.path.join(picdir, 'leaf.png'))
         Himage.paste(img, (180,220))
