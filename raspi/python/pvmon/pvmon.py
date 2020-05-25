@@ -69,7 +69,7 @@ try:
         draw.text((350, 0), str(hum) + '%' , font = font24, fill = 0)
 
         img = Image.open(os.path.join(picdir, 'self_consumption.png'))
-        Himage.paste(img, (0,30))
+        Himage.paste(img, (5,35))
 
 
         # Produktion
