@@ -47,10 +47,10 @@ try:
         logging.info("Temperature:" + str(temp))
         logging.info("Humidity:" + str(hum))
 
-        # Solaredge-Logo
-        img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
-        Himage.paste(img, (275,273))
-        draw = ImageDraw.Draw(Himage)
+        draw.line((0, 25, 400, 25), fill = 0)
+        #draw.line((0, 220, 400, 220), fill = 0)
+        draw.line((0, 225, 400, 270), fill = 0)
+        draw.line((0, 270, 400, 270), fill = 0)
 
         # Datum
         now = datetime.datetime.now()
@@ -120,18 +120,13 @@ try:
         draw.rectangle((48, 210, 351, 218), outline = 0)
         draw.rectangle((50, 213, 200, 215), fill = 0)
 
-
-        # CO2 Footprint
-        #img = Image.open(os.path.join(picdir, 'footprint.png'))
-        #Himage.paste(img, (360,220))
-
-
         # Last update
         draw.text((5,273), 'Stand: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
 
-        draw.line((0, 25, 400, 25), fill = 0)
-        #draw.line((0, 220, 400, 220), fill = 0)
-        draw.line((0, 270, 400, 270), fill = 0)
+        # Solaredge-Logo
+        img = Image.open(os.path.join(picdir, 'solaredge.bmp'))
+        Himage.paste(img, (275,273))
+        draw = ImageDraw.Draw(Himage)
 
         epd.display(epd.getbuffer(Himage))
         time.sleep(60)
