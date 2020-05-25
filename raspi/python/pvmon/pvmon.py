@@ -73,6 +73,13 @@ try:
         img = Image.open(os.path.join(picdir, 'feed.png'))
         Himage.paste(img, (319,30))
 
+        # Umwelt
+        img = Image.open(os.path.join(picdir, 'trees.png'))
+        Himage.paste(img, (5,225))
+
+        img = Image.open(os.path.join(picdir, 'co2.png'))
+        Himage.paste(img, (205,225))
+
 
         # Produktion
         img = Image.open(os.path.join(picdir, 'production.png'))
@@ -111,9 +118,7 @@ try:
         draw.text((170,180), '50 %', font = font24, fill = 0)
         draw.rectangle((48, 210, 351, 218), outline = 0)
         draw.rectangle((50, 213, 200, 215), fill = 0)
-        # Planted Trees
-        img = Image.open(os.path.join(picdir, 'leaf.png'))
-        Himage.paste(img, (180,220))
+
 
         # CO2 Footprint
         #img = Image.open(os.path.join(picdir, 'footprint.png'))
