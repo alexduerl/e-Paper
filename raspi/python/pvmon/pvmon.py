@@ -23,9 +23,9 @@ font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 
 #Variables
 production = 60.0
-self_consumption = 12.0
+self_consumption = 30.0
 self_consumption_percent = 0
-feed = 48.0
+feed = 30.0
 feed_percent = 0
 
 self_consumption_percent = self_consumption / production * 100
@@ -99,7 +99,7 @@ try:
         draw.text((5,75), '20%', font = font18, fill = 0)
         draw.text((355,75), '80%', font = font18, fill = 0)
         draw.rectangle((48, 80, 351, 88), outline = 0)
-        draw.rectangle((50, 83, 110, 85), fill = 0)
+        draw.rectangle((50, 83, 50+(self_consumption_percent*3), 85), fill = 0)
         draw.text((48, 90), 'Eigenverbrauch', font = font12, fill = 0)
         draw.text((280, 90), 'Einspeisung', font = font12, fill = 0)
         draw.text((48, 66), '12 kWh', font = font12, fill = 0)
