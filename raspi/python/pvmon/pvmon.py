@@ -15,6 +15,22 @@ import traceback
 import requests
 import datetime
 
+# Fonts
+font12 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 12)
+font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
+font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
+font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
+
+#Variables
+production = 60.0
+self_consumption = 12.0
+self_consumption_percent = 0
+feed = 48.0
+feed_percent = 0
+
+self_consumption_percent = self_consumption / production * 100
+feed_percent = feed / production * 100
+
 logging.basicConfig(level=logging.DEBUG)
 
 try:
@@ -23,26 +39,18 @@ try:
     epd = epd4in2.EPD()
     epd.init()
 
-    font12 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 12)
-    font18 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 18)
-    font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
-    font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
-
     # Show Temperature and Humidity
     logging.info("1.Show Temperature and Humidity..")
-
-    #bmp = Image.open(os.path.join(picdir, 'temp.png'))
-    #Himage.paste(bmp, (5,22))
 
     while True:
         r = requests.get('http://homematic-raspi/addons/red/hello-json')
         data = r.json()
         temp = data["temperature"]
         hum = data["humidity"]
-        #temp = '21.9'
-        #hum = '100'
-        logging.info("Temperature:" + str(temp))
-        logging.info("Humidity:" + str(hum))
+        #logging.info("Temperature:" + str(temp))
+        #logging.info("Humidity:" + str(hum))
+        logging.info("self_consumption:" + str(self_consumption_percent))
+        logging.info("feed:" + str(feed_percent))
 
         Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
         draw = ImageDraw.Draw(Himage)
@@ -68,11 +76,6 @@ try:
         draw = ImageDraw.Draw(Himage)
         draw.text((350, 0), str(hum) + '%' , font = font24, fill = 0)
 
-        img = Image.open(os.path.join(picdir, 'self_consumption.png'))
-        Himage.paste(img, (48,30))
-        img = Image.open(os.path.join(picdir, 'feed.png'))
-        Himage.paste(img, (319,30))
-
         # Umwelt
         img = Image.open(os.path.join(picdir, 'trees.png'))
         Himage.paste(img, (5,230))
@@ -83,6 +86,10 @@ try:
         draw.text((245,232), '14.919,75 kg', font = font24, fill = 0)
 
         # Produktion
+        img = Image.open(os.path.join(picdir, 'self_consumption.png'))
+        Himage.paste(img, (48,30))
+        img = Image.open(os.path.join(picdir, 'feed.png'))
+        Himage.paste(img, (319,30))
         img = Image.open(os.path.join(picdir, 'production.png'))
         Himage.paste(img, (120,30))
         draw.text((170,30), '00,30', font = font24, fill = 0)
