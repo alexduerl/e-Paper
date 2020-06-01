@@ -22,6 +22,8 @@ font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
 font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 
 #Variables
+temp = 0
+hum = 0
 production = 60.0
 self_consumption = 30.0
 self_consumption_percent = 0
@@ -39,12 +41,7 @@ try:
     epd = epd4in2.EPD()
     epd.init()
 
-    # Show Temperature and Humidity
-    logging.info("1.Show Temperature and Humidity..")
     url = 'http://homematic-raspi/addons/red/pvmon'
-
-    temp = 0.0
-    hum = 0
 
     while True:
 
