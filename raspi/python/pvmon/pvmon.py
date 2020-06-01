@@ -44,7 +44,7 @@ try:
     url = 'http://homematic-raspi/addons/red/hello-json'
 
     temp = 0.0
-    humidity = 0.0
+    hum = 0.0
 
     while True:
 
