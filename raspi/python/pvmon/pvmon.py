@@ -48,6 +48,9 @@ try:
 
     while True:
 
+        Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
+        draw = ImageDraw.Draw(Himage)
+
         try:
 
             r = requests.get(url)
@@ -63,10 +66,7 @@ try:
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
         logging.info("self_consumption:" + str(self_consumption_percent))
-        logging.info("feed:" + str(feed_percent))
-
-        Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-        draw = ImageDraw.Draw(Himage)
+        logging.info("feed:" + str(feed_percent)
 
         # Lines
         draw.line((0, 25, 400, 25), fill = 0)
