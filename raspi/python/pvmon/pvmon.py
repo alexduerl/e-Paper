@@ -41,7 +41,7 @@ try:
 
     # Show Temperature and Humidity
     logging.info("1.Show Temperature and Humidity..")
-    url = 'http://homematic-raspi/addons/red/hello-json'
+    url = 'http://homematic-raspi/addons/red/pvmon'
 
     temp = 0.0
     hum = 0
