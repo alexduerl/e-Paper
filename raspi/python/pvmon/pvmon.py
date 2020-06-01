@@ -53,7 +53,7 @@ try:
             temp = data["temperature"]
             hum = data["humidity"]
         except requests.exceptions.RequestException as e:
-            raise SystemExit(e)
+            logging.error("Fehler: " + e)
 
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
