@@ -57,6 +57,8 @@ try:
             hum = data["humidity"]
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
+            img = Image.open(os.path.join(picdir, 'alert.png'))
+            Himage.paste(img, (185,273))
 
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
