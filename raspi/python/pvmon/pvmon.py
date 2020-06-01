@@ -43,6 +43,9 @@ try:
     logging.info("1.Show Temperature and Humidity..")
     url = 'http://homematic-raspi/addons/red/hello-json'
 
+    temp = 0.0
+    humidity = 0.0
+
     while True:
 
         try:
