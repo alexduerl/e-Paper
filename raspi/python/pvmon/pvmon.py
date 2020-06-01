@@ -48,8 +48,6 @@ try:
 
     while True:
 
-        Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
-
         try:
 
             r = requests.get(url)
@@ -62,8 +60,9 @@ try:
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
 
+        Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
         draw = ImageDraw.Draw(Himage)
-        
+
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
         logging.info("self_consumption:" + str(self_consumption_percent))
