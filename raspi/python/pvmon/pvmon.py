@@ -48,6 +48,7 @@ try:
         try:
 
             r = requests.get(url)
+            r.raise_for_status()
             data = r.json()
             temp = data["temperature"]
             hum = data["humidity"]
