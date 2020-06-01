@@ -41,12 +41,19 @@ try:
 
     # Show Temperature and Humidity
     logging.info("1.Show Temperature and Humidity..")
+    url = 'http://homematic-raspi/addons/red/hello-json'
 
     while True:
-        r = requests.get('http://homematic-raspi/addons/red/hello-json')
-        data = r.json()
-        temp = data["temperature"]
-        hum = data["humidity"]
+
+        try:
+
+            r = requests.get(url)
+            data = r.json()
+            temp = data["temperature"]
+            hum = data["humidity"]
+        except requests.exceptions.RequestException as e:
+            raise SystemExit(e)
+
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
         logging.info("self_consumption:" + str(self_consumption_percent))
