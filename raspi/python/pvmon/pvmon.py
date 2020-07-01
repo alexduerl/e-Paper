@@ -22,7 +22,7 @@ font24 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 24)
 font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 
 #Variables
-temp = 0
+temp = 0.0
 hum = 0
 production = 60.0
 self_consumption = 30.0
