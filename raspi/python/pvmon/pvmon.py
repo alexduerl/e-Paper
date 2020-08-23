@@ -74,16 +74,16 @@ try:
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
 
-            url = 'http://homematic-raspi/addons/red/pvEnergyDay'
-            try:
-                r = requests.get(url)
-                r.raise_for_status()
-                data = r.json()
-                production_day = data["dayProduction"] / 1000
-            except requests.exceptions.RequestException as e:
-                logging.error("Fehler: " + str(e))
-                img = Image.open(os.path.join(picdir, 'alert.png'))
-                Himage.paste(img, (185,273))
+        url = 'http://homematic-raspi/addons/red/pvEnergyDay'
+        try:
+            r = requests.get(url)
+            r.raise_for_status()
+            data = r.json()
+            production_day = data["dayProduction"] / 1000
+        except requests.exceptions.RequestException as e:
+            logging.error("Fehler: " + str(e))
+            img = Image.open(os.path.join(picdir, 'alert.png'))
+            Himage.paste(img, (185,273))
 
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
