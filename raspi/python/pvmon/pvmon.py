@@ -41,7 +41,7 @@ try:
     epd = epd4in2.EPD()
     epd.init()
 
-    url = 'http://homematic-raspi/addons/red/pvmon'
+    url = 'http://homematic-raspi/addons/red/weather'
 
     while True:
 
