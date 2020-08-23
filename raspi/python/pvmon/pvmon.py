@@ -63,7 +63,7 @@ try:
             Himage.paste(img, (185,273))
 
 
-        url = 'http://homematic-raspi/addons/red/pvEnvBenefits
+        url = 'http://homematic-raspi/addons/red/pvEnvBenefits'
         '
         try:
             r = requests.get(url)
