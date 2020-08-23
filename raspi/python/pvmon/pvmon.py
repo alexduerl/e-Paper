@@ -29,6 +29,8 @@ self_consumption = 30.0
 self_consumption_percent = 0
 feed = 30.0
 feed_percent = 0
+env_trees = 0
+env_co2 = 0
 
 self_consumption_percent = self_consumption / production * 100
 feed_percent = feed / production * 100
@@ -41,19 +43,34 @@ try:
     epd = epd4in2.EPD()
     epd.init()
 
-    url = 'http://homematic-raspi/addons/red/weather'
+
 
     while True:
 
         Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
         draw = ImageDraw.Draw(Himage)
 
+        url = 'http://homematic-raspi/addons/red/weather'
         try:
             r = requests.get(url)
             r.raise_for_status()
             data = r.json()
             temp = data["temperature"]
             hum = data["humidity"]
+        except requests.exceptions.RequestException as e:
+            logging.error("Fehler: " + str(e))
+            img = Image.open(os.path.join(picdir, 'alert.png'))
+            Himage.paste(img, (185,273))
+
+
+        url = 'http://homematic-raspi/addons/red/pvEnvBenefits
+        '
+        try:
+            r = requests.get(url)
+            r.raise_for_status()
+            data = r.json()
+            env_trees = data["trees"]
+            env_co2 = data["co2"]
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
@@ -88,11 +105,11 @@ try:
         # Umwelt
         img = Image.open(os.path.join(picdir, 'trees.png'))
         Himage.paste(img, (5,230))
-        draw.text((45,232), '445,13', font = font24, fill = 0)
+        draw.text((45,232), env_trees, font = font24, fill = 0)
 
         img = Image.open(os.path.join(picdir, 'co2.png'))
         Himage.paste(img, (205,230))
-        draw.text((245,232), '14.919,75 kg', font = font24, fill = 0)
+        draw.text((245,232), env_co2, font = font24, fill = 0)
 
         # Produktion
         img = Image.open(os.path.join(picdir, 'self_consumption.png'))
