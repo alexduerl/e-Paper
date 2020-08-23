@@ -34,6 +34,7 @@ purchased_day = 0.0
 purchased_day_percent = 0
 self_production_day = 0.0
 self_production_day_percent = 0
+storage_charge_level = 0
 env_trees = 0
 env_co2 = 0
 
@@ -93,6 +94,18 @@ try:
             self_production_day = consumption_day - purchased_day
             purchased_day_percent = purchased_day / consumption_day * 100
             self_production_day_percent = 100 - purchased_day_percent
+
+        except requests.exceptions.RequestException as e:
+            logging.error("Fehler: " + str(e))
+            img = Image.open(os.path.join(picdir, 'alert.png'))
+            Himage.paste(img, (185,273))
+
+        url = 'http://homematic-raspi/addons/red/pvPowerFlow'
+        try:
+            r = requests.get(url)
+            r.raise_for_status()
+            data = r.json()
+            storage_charge_level = data["ChargeLevel"]
 
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
@@ -170,9 +183,9 @@ try:
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
         Himage.paste(img, (120,180))
-        draw.text((170,180), '50 %', font = font24, fill = 0)
+        draw.text((170,180), str(storage_charge_level)+'%', font = font24, fill = 0)
         draw.rectangle((48, 210, 351, 218), outline = 0)
-        draw.rectangle((50, 213, 200, 215), fill = 0)
+        draw.rectangle((50, 213, 50+(storage_charge_level*3), 215), fill = 0)
 
         # Last update
         draw.text((5,273), 'Stand: ' + now.strftime('%H:%M:%S'), font = font18, fill = 0)
