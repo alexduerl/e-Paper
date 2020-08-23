@@ -31,6 +31,7 @@ self_consumption_day_percent = 0
 feedin_day = 0.0
 feedin_day_percent = 0
 purchased_day = 0.0
+purchased_day_percent = 0
 env_trees = 0
 env_co2 = 0
 
@@ -87,6 +88,8 @@ try:
             self_consumption_day_percent = self_consumption_day / production_day * 100
             feedin_day_percent = feedin_day / production_day * 100
 
+            purchased_day_percent = purchased_day / consumption_day * 100
+
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
@@ -136,8 +139,7 @@ try:
         Himage.paste(img, (120,30))
         #draw.text((170,30), '00,30', font = font24, fill = 0)
         #draw.text((230,30), 'kW', font = font24, fill = 0)
-        draw.text((170,54), str(production_day), font = font24, fill = 0)
-        draw.text((230,54), 'kWh', font = font24, fill = 0)
+        draw.text((170,54), str(production_day)+' kWh', font = font24, fill = 0)
         draw.text((5,75), str(int(self_consumption_day_percent)) +'%', font = font18, fill = 0)
         draw.text((355,75), str(int(feedin_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 80, 351, 88), outline = 0)
@@ -151,9 +153,8 @@ try:
         Himage.paste(img, (120,105))
         #draw.text((170,105), '00,50', font=font24, fill = 0)
         #draw.text((230,105), 'kW', font=font24, fill = 0)
-        draw.text((170,129), str(consumption_day), font=font24, fill = 0)
-        draw.text((230,129), 'kWh', font=font24, fill = 0)
-        draw.text((5,150), '80%', font = font18, fill = 0)
+        draw.text((170,129), str(consumption_day)+' kWh', font=font24, fill = 0)
+        draw.text((5,150), str(int(purchased_day_percent))+'%'', font = font18, fill = 0)
         draw.text((355,150), '20%', font = font18, fill = 0)
         draw.rectangle((48, 155, 351, 163), outline = 0)
         draw.rectangle((50, 158, 290, 160), fill = 0)
