@@ -29,8 +29,8 @@ self_consumption = 30.0
 self_consumption_percent = 0
 feed = 30.0
 feed_percent = 0
-env_trees = 0
-env_co2 = 0
+env_trees = 0.00
+env_co2 = 0.00
 
 self_consumption_percent = self_consumption / production * 100
 feed_percent = feed / production * 100
