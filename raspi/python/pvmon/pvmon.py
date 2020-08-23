@@ -151,7 +151,7 @@ try:
         draw.text((48, 90), 'Eigenverbrauch', font = font12, fill = 0)
         draw.text((285, 90), 'Einspeisung', font = font12, fill = 0)
         draw.text((48, 60), str(('%.2f' % self_consumption_day).replace('.', ',')), font = font18, fill = 0)
-        draw.text((310, 60), str(('%.2f' % feedin_day).replace('.', ',')), font = font18, fill = 0)
+        draw.text((305, 60), str(('%.2f' % feedin_day).replace('.', ',')), font = font18, fill = 0)
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
         Himage.paste(img, (120,105))
