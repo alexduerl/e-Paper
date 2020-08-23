@@ -30,6 +30,7 @@ self_consumption_day = 0.0
 self_consumption_day_percent = 0
 feedin_day = 0.0
 feedin_day_percent = 0
+purchased_day = 0.0
 env_trees = 0
 env_co2 = 0
 
@@ -80,6 +81,7 @@ try:
             production_day = data["dayProduction"] / 1000
             consumption_day = data["dayConsumption"] / 1000
             feedin_day = data["dayFeedIn"] / 1000
+            purchased_day = data["dayPurchased"] / 1000
 
             self_consumption_day = production_day - feedin_day
             self_consumption_day_percent = self_consumption_day / production_day * 100
@@ -158,7 +160,7 @@ try:
         draw.text((48, 165), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((300, 165), 'Zukauf', font = font12, fill = 0)
         draw.text((48, 141), '16 kWh', font = font12, fill = 0)
-        draw.text((300, 141), '4 kWh', font = font12, fill = 0)
+        draw.text((300, 141), str(purchased_day), font = font12, fill = 0)
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
