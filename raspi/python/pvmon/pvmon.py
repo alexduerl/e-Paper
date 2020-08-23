@@ -143,7 +143,7 @@ try:
         Himage.paste(img, (120,30))
         #draw.text((170,30), '00,30', font = font24, fill = 0)
         #draw.text((230,30), 'kW', font = font24, fill = 0)
-        draw.text((170,54), str(('%.2f' % production_day).replace('.', ','))+'', font = font24, fill = 0)
+        draw.text((170,54), str(('%.2f' % production_day).replace('.', ','))+' kWh', font = font24, fill = 0)
         draw.text((5,75), str(int(self_consumption_day_percent)) +'%', font = font18, fill = 0)
         draw.text((355,75), str(int(feedin_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 80, 351, 88), outline = 0)
@@ -151,13 +151,13 @@ try:
         draw.text((48, 90), 'Eigenverbrauch', font = font12, fill = 0)
         draw.text((285, 90), 'Einspeisung', font = font12, fill = 0)
         draw.text((48, 60), str(('%.2f' % self_consumption_day).replace('.', ',')), font = font18, fill = 0)
-        draw.text((300, 60), str(('%.2f' % feedin_day).replace('.', ',')), font = font18, fill = 0)
+        draw.text((310, 60), str(('%.2f' % feedin_day).replace('.', ',')), font = font18, fill = 0)
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
         Himage.paste(img, (120,105))
         #draw.text((170,105), '00,50', font=font24, fill = 0)
         #draw.text((230,105), 'kW', font=font24, fill = 0)
-        draw.text((170,129), str(('%.2f' % consumption_day).replace('.', ','))+'', font=font24, fill = 0)
+        draw.text((170,129), str(('%.2f' % consumption_day).replace('.', ','))+' kWh', font=font24, fill = 0)
         draw.text((5,150), str(int(self_production_day_percent))+'%', font = font18, fill = 0)
         draw.text((355,150), str(int(purchased_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 155, 351, 163), outline = 0)
@@ -165,7 +165,7 @@ try:
         draw.text((48, 165), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((315, 165), 'Zukauf', font = font12, fill = 0)
         draw.text((48, 135), str(('%.2f' % self_production_day).replace('.', ',')), font = font18, fill = 0)
-        draw.text((300, 135), str(('%.2f' % purchased_day).replace('.', ',')), font = font18, fill = 0)
+        draw.text((315, 135), str(('%.2f' % purchased_day).replace('.', ',')), font = font18, fill = 0)
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
