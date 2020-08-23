@@ -136,9 +136,9 @@ try:
 
         # Produktion
         img = Image.open(os.path.join(picdir, 'self_consumption.png'))
-        Himage.paste(img, (48,30))
+        Himage.paste(img, (0,30))
         img = Image.open(os.path.join(picdir, 'feed.png'))
-        Himage.paste(img, (319,30))
+        Himage.paste(img, (367,30))
         img = Image.open(os.path.join(picdir, 'production.png'))
         Himage.paste(img, (120,30))
         #draw.text((170,30), '00,30', font = font24, fill = 0)
@@ -150,8 +150,8 @@ try:
         draw.rectangle((50, 83, 50+(self_consumption_day_percent*3), 85), fill = 0)
         draw.text((48, 90), 'Eigenverbrauch', font = font12, fill = 0)
         draw.text((280, 90), 'Einspeisung', font = font12, fill = 0)
-        draw.text((48, 66), str(('%.2f' % self_consumption_day).replace('.', ',')), font = font12, fill = 0)
-        draw.text((300, 66), str(('%.2f' % feedin_day).replace('.', ',')), font = font12, fill = 0)
+        draw.text((48, 66), str(('%.2f' % self_consumption_day).replace('.', ',')), font = font18, fill = 0)
+        draw.text((300, 66), str(('%.2f' % feedin_day).replace('.', ',')), font = font18, fill = 0)
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
         Himage.paste(img, (120,105))
@@ -164,8 +164,8 @@ try:
         draw.rectangle((50, 158, 50+(self_production_day_percent*3), 160), fill = 0)
         draw.text((48, 165), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((300, 165), 'Zukauf', font = font12, fill = 0)
-        draw.text((48, 141), str(('%.2f' % self_production_day).replace('.', ',')), font = font12, fill = 0)
-        draw.text((300, 141), str(('%.2f' % purchased_day).replace('.', ',')), font = font12, fill = 0)
+        draw.text((48, 141), str(('%.2f' % self_production_day).replace('.', ',')), font = font18, fill = 0)
+        draw.text((300, 141), str(('%.2f' % purchased_day).replace('.', ',')), font = font18, fill = 0)
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
