@@ -154,7 +154,7 @@ try:
         #draw.text((170,105), '00,50', font=font24, fill = 0)
         #draw.text((230,105), 'kW', font=font24, fill = 0)
         draw.text((170,129), str(consumption_day)+' kWh', font=font24, fill = 0)
-        draw.text((5,150), str(int(purchased_day_percent))+'%'', font = font18, fill = 0)
+        draw.text((5,150), str(int(purchased_day_percent))+'%', font = font18, fill = 0)
         draw.text((355,150), '20%', font = font18, fill = 0)
         draw.rectangle((48, 155, 351, 163), outline = 0)
         draw.rectangle((50, 158, 290, 160), fill = 0)
