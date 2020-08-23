@@ -103,11 +103,11 @@ try:
         # Umwelt
         img = Image.open(os.path.join(picdir, 'trees.png'))
         Himage.paste(img, (5,230))
-        draw.text((45,232), env_trees, font = font24, fill = 0)
+        draw.text((45,232), str(env_trees), font = font24, fill = 0)
 
         img = Image.open(os.path.join(picdir, 'co2.png'))
         Himage.paste(img, (205,230))
-        draw.text((245,232), env_co2, font = font24, fill = 0)
+        draw.text((245,232), str(env_co2), font = font24, fill = 0)
 
         # Produktion
         img = Image.open(os.path.join(picdir, 'self_consumption.png'))
