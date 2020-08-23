@@ -161,7 +161,7 @@ try:
         draw.text((5,150), str(int(self_production_day_percent))+'%', font = font18, fill = 0)
         draw.text((355,150), str(int(purchased_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 155, 351, 163), outline = 0)
-        draw.rectangle((50, 158, 290, 160), fill = 0)
+        draw.rectangle((50, 158, 50+(self_production_day_percent*3), 160), fill = 0)
         draw.text((48, 165), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((300, 165), 'Zukauf', font = font12, fill = 0)
         draw.text((48, 141), str(self_production_day), font = font12, fill = 0)
