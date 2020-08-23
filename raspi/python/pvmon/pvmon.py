@@ -26,14 +26,12 @@ temp = 0.0
 hum = 0
 production_day = 0.0
 consumption_day = 0.0
-self_consumption = 0.0
-self_consumption_percent = 0
+self_consumption_day = 0.0
+self_consumption_day_percent = 0
 feedin_day = 0.0
 feedin_day_percent = 0
 env_trees = 0
 env_co2 = 0
-
-#self_consumption_percent = self_consumption / production_day * 100
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -83,8 +81,10 @@ try:
             consumption_day = data["dayConsumption"] / 1000
             feedin_day = data["dayFeedIn"] / 1000
 
-
+            self_consumption_day = production_day - feedin_day
+            self_consumption_day_percent = self_consumption_day / production_day * 100
             feedin_day_percent = feedin_day / production_day * 100
+
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
@@ -142,7 +142,7 @@ try:
         draw.rectangle((50, 83, 50+(self_consumption_percent*3), 85), fill = 0)
         draw.text((48, 90), 'Eigenverbrauch', font = font12, fill = 0)
         draw.text((280, 90), 'Einspeisung', font = font12, fill = 0)
-        draw.text((48, 66), '12 kWh', font = font12, fill = 0)
+        draw.text((48, 66), str(self_consumption_day), font = font12, fill = 0)
         draw.text((300, 66), str(feedin_day), font = font12, fill = 0)
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
