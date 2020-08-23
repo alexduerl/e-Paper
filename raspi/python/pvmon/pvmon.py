@@ -128,11 +128,11 @@ try:
         # Umwelt
         img = Image.open(os.path.join(picdir, 'trees.png'))
         Himage.paste(img, (5,230))
-        draw.text((45,232), str(env_trees), font = font24, fill = 0)
+        draw.text((45,232), str(('%.2f' % env_trees).replace('.', ',')), font = font24, fill = 0)
 
         img = Image.open(os.path.join(picdir, 'co2.png'))
         Himage.paste(img, (205,230))
-        draw.text((245,232), str(env_co2)+' kg', font = font24, fill = 0)
+        draw.text((245,232), str(('%.2f' % env_co2).replace('.', ','))+' kg', font = font24, fill = 0)
 
         # Produktion
         img = Image.open(os.path.join(picdir, 'self_consumption.png'))
@@ -157,15 +157,15 @@ try:
         Himage.paste(img, (120,105))
         #draw.text((170,105), '00,50', font=font24, fill = 0)
         #draw.text((230,105), 'kW', font=font24, fill = 0)
-        draw.text((170,129), str(consumption_day)+'', font=font24, fill = 0)
+        draw.text((170,129), str(('%.2f' % consumption_day).replace('.', ','))+'', font=font24, fill = 0)
         draw.text((5,150), str(int(self_production_day_percent))+'%', font = font18, fill = 0)
         draw.text((355,150), str(int(purchased_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 155, 351, 163), outline = 0)
         draw.rectangle((50, 158, 50+(self_production_day_percent*3), 160), fill = 0)
         draw.text((48, 165), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((300, 165), 'Zukauf', font = font12, fill = 0)
-        draw.text((48, 141), str(self_production_day), font = font12, fill = 0)
-        draw.text((300, 141), str(purchased_day), font = font12, fill = 0)
+        draw.text((48, 141), str(('%.2f' % self_production_day).replace('.', ',')), font = font12, fill = 0)
+        draw.text((300, 141), str(('%.2f' % purchased_day).replace('.', ',')), font = font12, fill = 0)
 
         # Battery
         img = Image.open(os.path.join(picdir, 'battery.png'))
