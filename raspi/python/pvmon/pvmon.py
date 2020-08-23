@@ -149,7 +149,7 @@ try:
         draw.rectangle((48, 80, 351, 88), outline = 0)
         draw.rectangle((50, 83, 50+(self_consumption_day_percent*3), 85), fill = 0)
         draw.text((48, 90), 'Eigenverbrauch', font = font12, fill = 0)
-        draw.text((280, 90), 'Einspeisung', font = font12, fill = 0)
+        draw.text((285, 90), 'Einspeisung', font = font12, fill = 0)
         draw.text((48, 60), str(('%.2f' % self_consumption_day).replace('.', ',')), font = font18, fill = 0)
         draw.text((300, 60), str(('%.2f' % feedin_day).replace('.', ',')), font = font18, fill = 0)
         # Verbrauch
@@ -163,7 +163,7 @@ try:
         draw.rectangle((48, 155, 351, 163), outline = 0)
         draw.rectangle((50, 158, 50+(self_production_day_percent*3), 160), fill = 0)
         draw.text((48, 165), 'Eigenproduktion', font = font12, fill = 0)
-        draw.text((300, 165), 'Zukauf', font = font12, fill = 0)
+        draw.text((310, 165), 'Zukauf', font = font12, fill = 0)
         draw.text((48, 135), str(('%.2f' % self_production_day).replace('.', ',')), font = font18, fill = 0)
         draw.text((300, 135), str(('%.2f' % purchased_day).replace('.', ',')), font = font18, fill = 0)
 
