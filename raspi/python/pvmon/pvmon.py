@@ -132,7 +132,7 @@ try:
 
         img = Image.open(os.path.join(picdir, 'co2.png'))
         Himage.paste(img, (205,230))
-        draw.text((245,232), str(env_co2), font = font24, fill = 0)
+        draw.text((245,232), str(env_co2)+' kg', font = font24, fill = 0)
 
         # Produktion
         img = Image.open(os.path.join(picdir, 'self_consumption.png'))
