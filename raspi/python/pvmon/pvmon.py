@@ -34,7 +34,6 @@ env_trees = 0
 env_co2 = 0
 
 #self_consumption_percent = self_consumption / production_day * 100
-feedin_day_percent = feedin_day / production_day * 100
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -83,6 +82,9 @@ try:
             production_day = data["dayProduction"] / 1000
             consumption_day = data["dayConsumption"] / 1000
             feedin_day = data["dayFeedIn"] / 1000
+
+
+            feedin_day_percent = feedin_day / production_day * 100
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
