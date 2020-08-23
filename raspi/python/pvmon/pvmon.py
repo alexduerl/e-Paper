@@ -25,6 +25,7 @@ font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 temp = 0.0
 hum = 0
 production_day = 0.0
+consumption_day = 0.0
 self_consumption = 0.0
 self_consumption_percent = 0
 feed = 0.0
@@ -80,6 +81,7 @@ try:
             r.raise_for_status()
             data = r.json()
             production_day = data["dayProduction"] / 1000
+            consumption_day = data["dayConsumption"] / 1000
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
@@ -144,7 +146,7 @@ try:
         Himage.paste(img, (120,105))
         #draw.text((170,105), '00,50', font=font24, fill = 0)
         #draw.text((230,105), 'kW', font=font24, fill = 0)
-        draw.text((170,129), '20,00', font=font24, fill = 0)
+        draw.text((170,129), str(consumption_day), font=font24, fill = 0)
         draw.text((230,129), 'kWh', font=font24, fill = 0)
         draw.text((5,150), '80%', font = font18, fill = 0)
         draw.text((355,150), '20%', font = font18, fill = 0)
