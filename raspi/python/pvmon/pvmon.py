@@ -143,7 +143,7 @@ try:
         Himage.paste(img, (120,30))
         #draw.text((170,30), '00,30', font = font24, fill = 0)
         #draw.text((230,30), 'kW', font = font24, fill = 0)
-        draw.text((170,54), str(production_day)+'', font = font24, fill = 0)
+        draw.text((170,54), str(('%.2f' % production_day).replace('.', ','))+'', font = font24, fill = 0)
         draw.text((5,75), str(int(self_consumption_day_percent)) +'%', font = font18, fill = 0)
         draw.text((355,75), str(int(feedin_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 80, 351, 88), outline = 0)
