@@ -24,13 +24,13 @@ font35 = ImageFont.truetype(os.path.join(picdir, 'Font.ttc'), 35)
 #Variables
 temp = 0.0
 hum = 0
-production = 60.0
-self_consumption = 30.0
+production_day = 0.0
+self_consumption = 0.0
 self_consumption_percent = 0
-feed = 30.0
+feed = 0.0
 feed_percent = 0
-env_trees = 0.00
-env_co2 = 0.00
+env_trees = 0
+env_co2 = 0
 
 self_consumption_percent = self_consumption / production * 100
 feed_percent = feed / production * 100
@@ -73,6 +73,18 @@ try:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
+
+            url = 'http://homematic-raspi/addons/red/pvEnergyDay'
+            try:
+                r = requests.get(url)
+                r.raise_for_status()
+                data = r.json()
+                production_day = data["dayProduction"] / 1000
+                env_co2 = data["co2"]
+            except requests.exceptions.RequestException as e:
+                logging.error("Fehler: " + str(e))
+                img = Image.open(os.path.join(picdir, 'alert.png'))
+                Himage.paste(img, (185,273))
 
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
@@ -118,7 +130,7 @@ try:
         Himage.paste(img, (120,30))
         #draw.text((170,30), '00,30', font = font24, fill = 0)
         #draw.text((230,30), 'kW', font = font24, fill = 0)
-        draw.text((170,54), '60,00', font = font24, fill = 0)
+        draw.text((170,54), str(production_day), font = font24, fill = 0)
         draw.text((230,54), 'kWh', font = font24, fill = 0)
         draw.text((5,75), str(int(self_consumption_percent)) +'%', font = font18, fill = 0)
         draw.text((355,75), str(int(feed_percent))+'%', font = font18, fill = 0)
