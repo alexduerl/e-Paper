@@ -32,6 +32,8 @@ feedin_day = 0.0
 feedin_day_percent = 0
 purchased_day = 0.0
 purchased_day_percent = 0
+self_production_day = 0.0
+self_production_day_percent = 0
 env_trees = 0
 env_co2 = 0
 
@@ -85,10 +87,12 @@ try:
             purchased_day = data["dayPurchased"] / 1000
 
             self_consumption_day = production_day - feedin_day
-            self_consumption_day_percent = self_consumption_day / production_day * 100
             feedin_day_percent = feedin_day / production_day * 100
+            self_consumption_day_percent = 100 - feedin_day_percent
 
+            self_production_day = consumption_day - purchased_day
             purchased_day_percent = purchased_day / consumption_day * 100
+            self_production_day_percent = 100 - purchased_day_percent
 
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
@@ -154,13 +158,13 @@ try:
         #draw.text((170,105), '00,50', font=font24, fill = 0)
         #draw.text((230,105), 'kW', font=font24, fill = 0)
         draw.text((170,129), str(consumption_day)+' kWh', font=font24, fill = 0)
-        draw.text((5,150), str(int(purchased_day_percent))+'%', font = font18, fill = 0)
-        draw.text((355,150), '20%', font = font18, fill = 0)
+        draw.text((5,150), str(int(self_production_day_percent))+'%', font = font18, fill = 0)
+        draw.text((355,150), str(int(purchased_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 155, 351, 163), outline = 0)
         draw.rectangle((50, 158, 290, 160), fill = 0)
         draw.text((48, 165), 'Eigenproduktion', font = font12, fill = 0)
         draw.text((300, 165), 'Zukauf', font = font12, fill = 0)
-        draw.text((48, 141), '16 kWh', font = font12, fill = 0)
+        draw.text((48, 141), str(self_production_day), font = font12, fill = 0)
         draw.text((300, 141), str(purchased_day), font = font12, fill = 0)
 
         # Battery
