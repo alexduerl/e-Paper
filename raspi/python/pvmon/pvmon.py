@@ -28,13 +28,13 @@ production_day = 0.0
 consumption_day = 0.0
 self_consumption = 0.0
 self_consumption_percent = 0
-feed = 0.0
-feed_percent = 0
+feedin_day = 0.0
+feedin_day_percent = 0
 env_trees = 0
 env_co2 = 0
 
 #self_consumption_percent = self_consumption / production_day * 100
-#feed_percent = feed / production_day * 100
+feedin_day_percent = feedin_day / production_day * 100
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -82,6 +82,7 @@ try:
             data = r.json()
             production_day = data["dayProduction"] / 1000
             consumption_day = data["dayConsumption"] / 1000
+            feedin_day = data["dayFeedIn"] / 1000
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
@@ -134,13 +135,13 @@ try:
         draw.text((170,54), str(production_day), font = font24, fill = 0)
         draw.text((230,54), 'kWh', font = font24, fill = 0)
         draw.text((5,75), str(int(self_consumption_percent)) +'%', font = font18, fill = 0)
-        draw.text((355,75), str(int(feed_percent))+'%', font = font18, fill = 0)
+        draw.text((355,75), str(int(feedin_day_percent))+'%', font = font18, fill = 0)
         draw.rectangle((48, 80, 351, 88), outline = 0)
         draw.rectangle((50, 83, 50+(self_consumption_percent*3), 85), fill = 0)
         draw.text((48, 90), 'Eigenverbrauch', font = font12, fill = 0)
         draw.text((280, 90), 'Einspeisung', font = font12, fill = 0)
         draw.text((48, 66), '12 kWh', font = font12, fill = 0)
-        draw.text((300, 66), '48 kWh', font = font12, fill = 0)
+        draw.text((300, 66), str(feedin_day), font = font12, fill = 0)
         # Verbrauch
         img = Image.open(os.path.join(picdir, 'consumption.png'))
         Himage.paste(img, (120,105))
