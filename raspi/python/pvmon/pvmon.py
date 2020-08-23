@@ -61,8 +61,7 @@ try:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
-
-
+            
         url = 'http://homematic-raspi/addons/red/pvEnvBenefits'
         '
         try:
