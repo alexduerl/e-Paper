@@ -196,7 +196,7 @@ try:
         draw = ImageDraw.Draw(Himage)
 
         epd.display(epd.getbuffer(Himage))
-        time.sleep(60)
+        time.sleep(300)
         #logging.info("Goto Sleep...")
         #epd.sleep()
 
