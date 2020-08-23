@@ -32,8 +32,8 @@ feed_percent = 0
 env_trees = 0
 env_co2 = 0
 
-self_consumption_percent = self_consumption / production * 100
-feed_percent = feed / production * 100
+self_consumption_percent = self_consumption / production_day * 100
+feed_percent = feed / production_day * 100
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -80,7 +80,6 @@ try:
                 r.raise_for_status()
                 data = r.json()
                 production_day = data["dayProduction"] / 1000
-                env_co2 = data["co2"]
             except requests.exceptions.RequestException as e:
                 logging.error("Fehler: " + str(e))
                 img = Image.open(os.path.join(picdir, 'alert.png'))
