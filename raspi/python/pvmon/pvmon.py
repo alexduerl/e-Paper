@@ -32,8 +32,8 @@ feed_percent = 0
 env_trees = 0
 env_co2 = 0
 
-self_consumption_percent = self_consumption / production_day * 100
-feed_percent = feed / production_day * 100
+#self_consumption_percent = self_consumption / production_day * 100
+#feed_percent = feed / production_day * 100
 
 logging.basicConfig(level=logging.DEBUG)
 
