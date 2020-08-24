@@ -47,9 +47,9 @@ try:
     epd = epd4in2.EPD()
     epd.init()
 
-    sleep_time = 300
-
     while True:
+
+    sleep_time = 300
 
         Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
         draw = ImageDraw.Draw(Himage)
