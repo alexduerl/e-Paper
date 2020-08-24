@@ -145,7 +145,7 @@ try:
 
         # Umwelt
         img = Image.open(os.path.join(picdir, 'trees.png'))
-        Himage.paste(img, (5,230))
+        #Himage.paste(img, (5,230))
         draw.text((45,232), str(('%.2f' % env_trees).replace('.', ',')), font = font24, fill = 0)
 
         img = Image.open(os.path.join(picdir, 'co2.png'))
