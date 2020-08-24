@@ -47,7 +47,7 @@ try:
     epd = epd4in2.EPD()
     epd.init()
 
-    connection_error = 300
+    sleep_time = 300
 
     while True:
 
