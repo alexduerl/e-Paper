@@ -37,6 +37,7 @@ self_production_day_percent = 0
 storage_charge_level = 0
 env_trees = 0
 env_co2 = 0
+sleep_time = 0
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -46,7 +47,7 @@ try:
     epd = epd4in2.EPD()
     epd.init()
 
-
+    connection_error = 300
 
     while True:
 
@@ -64,6 +65,7 @@ try:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
+            sleep_time = 10
 
         url = 'http://homematic-raspi/addons/red/pvEnvBenefits'
         try:
@@ -76,6 +78,7 @@ try:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
+            sleep_time = 10
 
         url = 'http://homematic-raspi/addons/red/pvEnergyDay'
         try:
@@ -99,6 +102,7 @@ try:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
+            sleep_time = 10
 
         url = 'http://homematic-raspi/addons/red/pvPowerFlow'
         try:
@@ -111,6 +115,7 @@ try:
             logging.error("Fehler: " + str(e))
             img = Image.open(os.path.join(picdir, 'alert.png'))
             Himage.paste(img, (185,273))
+            sleep_time = 10
 
         #logging.info("Temperature:" + str(temp))
         #logging.info("Humidity:" + str(hum))
@@ -196,7 +201,7 @@ try:
         draw = ImageDraw.Draw(Himage)
 
         epd.display(epd.getbuffer(Himage))
-        time.sleep(300)
+        time.sleep(sleep_time)
         #logging.info("Goto Sleep...")
         #epd.sleep()
 
