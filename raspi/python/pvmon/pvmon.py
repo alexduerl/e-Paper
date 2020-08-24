@@ -49,7 +49,7 @@ try:
 
     while True:
 
-    sleep_time = 300
+        sleep_time = 300
 
         Himage = Image.new('1', (epd.width, epd.height), 255)  # 255: clear the frame
         draw = ImageDraw.Draw(Himage)
