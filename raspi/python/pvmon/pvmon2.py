@@ -158,7 +158,7 @@ try:
         #img = Image.open(os.path.join(picdir, 'feed.png'))
         #Himage.paste(img, (362,30))
         img = Image.open(os.path.join(picdir, 'sun.png'))
-        Himage.paste(img, (120,30))
+        Himage.paste(img, (168,30))
         #draw.text((170,30), '00,30', font = font24, fill = 0)
         #draw.text((230,30), 'kW', font = font24, fill = 0)
         #draw.text((170,54), str(('%.2f' % production_day).replace('.', ','))+' kWh', font = font24, fill = 0)
