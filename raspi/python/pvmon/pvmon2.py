@@ -172,8 +172,8 @@ try:
         #draw.text((305, 60), str(('%.2f' % feedin_day).replace('.', ',')), font = font18, fill = 0)
 
         # Verbrauch
-        #img = Image.open(os.path.join(picdir, 'consumption.png'))
-        #Himage.paste(img, (120,105))
+        img = Image.open(os.path.join(picdir, 'house.png'))
+        Himage.paste(img, (168,105))
         #draw.text((170,105), '00,50', font=font24, fill = 0)
         #draw.text((230,105), 'kW', font=font24, fill = 0)
         #draw.text((170,129), str(('%.2f' % consumption_day).replace('.', ','))+' kWh', font=font24, fill = 0)
