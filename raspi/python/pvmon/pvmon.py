@@ -91,7 +91,7 @@ try:
             purchased_day = data["dayPurchased"] / 1000
 
             self_consumption_day = production_day - feedin_day
-            if production_day = 0:
+            if production_day == 0:
                  feedin_day_percent = 0
                  self_consumption_day_percent = 0
             else:
@@ -99,7 +99,7 @@ try:
                 self_consumption_day_percent = 100 - feedin_day_percent
 
             self_production_day = consumption_day - purchased_day
-            if consumption_day = 0:
+            if consumption_day == 0:
                 purchased_day_percent = 0
                 self_production_day_percent = 0
             else:
