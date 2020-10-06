@@ -91,12 +91,20 @@ try:
             purchased_day = data["dayPurchased"] / 1000
 
             self_consumption_day = production_day - feedin_day
-            feedin_day_percent = round(feedin_day / production_day * 100)
-            self_consumption_day_percent = 100 - feedin_day_percent
+            if production_day = 0:
+                 feedin_day_percent = 0
+                 self_consumption_day_percent = 0
+            else:
+                feedin_day_percent = round(feedin_day / production_day * 100)
+                self_consumption_day_percent = 100 - feedin_day_percent
 
             self_production_day = consumption_day - purchased_day
-            purchased_day_percent = round(purchased_day / consumption_day * 100)
-            self_production_day_percent = 100 - purchased_day_percent
+            if consumption_day = 0:
+                purchased_day_percent = 0
+                self_production_day_percent = 0
+            else:
+                purchased_day_percent = round(purchased_day / consumption_day * 100)
+                self_production_day_percent = 100 - purchased_day_percent
 
         except requests.exceptions.RequestException as e:
             logging.error("Fehler: " + str(e))
